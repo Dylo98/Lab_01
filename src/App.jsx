@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { data } from '../module-data';
+import { data } from './module-data';
 function App() {
   const [count, setCount] = useState(0);
 

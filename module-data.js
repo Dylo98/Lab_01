@@ -1,1 +1,0 @@
-export const data = ["Dawid","Kinga","Adrian","Kamil","Marcin","Kinga","Eryk","Eryk","Eryk","Marcin",];
