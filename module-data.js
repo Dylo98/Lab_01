@@ -1,1 +1,1 @@
-export const data = ["Wiola","Kamil","Eryk","Adrian","Dawid","Kinga","Adrian","Dawid","Marcin","Dawid",];
+export const data = ["Dawid","Kinga","Adrian","Kamil","Marcin","Kinga","Eryk","Eryk","Eryk","Marcin",];
