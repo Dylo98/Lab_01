@@ -8,7 +8,13 @@ function PeoplePage() {
   return (
     <>
       <h1>Szukane imie</h1>
-      <p>{data.at(id) ? data.at(id) : <span>Brak takiego imienia</span>}</p>
+      <p>
+        {data.at(id) && data.at(id).name ? (
+          data.at(id).name
+        ) : (
+          <span>Brak takiego imienia</span>
+        )}
+      </p>
     </>
   );
 }
