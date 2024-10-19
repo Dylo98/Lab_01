@@ -1,28 +1,21 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { data } from './data/module-data';
+// import { data } from './data/module-data';
+import RootLayout from './layouts/RootLayout';
+import { Route, Routes } from 'react-router-dom';
+import Lab1Page from './pages/Lab1Page';
+import PeoplePage from './pages/PeoplePage';
+import NotFoundPage from './pages/NotFoundPage';
+
 function App() {
   return (
-    <>
-      <div className="container mt-4">
-        <h1 className="text-center mb-4">Dane</h1>
-        <div className="row">
-          {data.map(person => {
-            return (
-              <div key={person.id} className="col-md-16 mb-4">
-                <div className="card h-100">
-                  <div className="card-body d-flex flex-column">
-                    <h5 className="card-title">{person.name}</h5>
-                    <p className="card-text">Birthday: {person.birth}</p>
-                    <p className="card-text">Eyes: {person.eyes}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
+    <RootLayout>
+      <Routes>
+        <Route path="/lab1" element={<Lab1Page />} />
+        <Route path="/lab2" element={<h1>Laboratorium2</h1>} />
+        <Route path="/people/:id" element={<PeoplePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </RootLayout>
   );
 }
 
