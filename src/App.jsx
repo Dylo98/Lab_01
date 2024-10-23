@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import RootLayout from './layouts/RootLayout';
 import { Route, Routes } from 'react-router-dom';
 import Lab1Page from './pages/Lab1Page';
+import Lab2Page from './pages/Lab2Page';
 import PeoplePage from './pages/PeoplePage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -12,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Home</h1>} />
         <Route path="/lab1" element={<Lab1Page />} />
-        <Route path="/lab2" element={<h1>Laboratorium2</h1>} />
+        <Route path="/lab2" element={<Lab2Page />} />
         <Route path="/people/:id" element={<PeoplePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
