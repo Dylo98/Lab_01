@@ -1,4 +1,5 @@
 import NavBarMenu from '../components/NavBarMenu';
+import Footer from '../components/Footer';
 import Container from 'react-bootstrap/Container';
 import PropTypes from 'prop-types';
 
@@ -11,9 +12,13 @@ function RootLayout({ children }) {
 
   return (
     <>
-      <NavBarMenu items={menuItems} />
+      <div className="d-flex flex-column min-vh-100">
+        <NavBarMenu items={menuItems} />
 
-      <Container className="mt-4">{children}</Container>
+        <Container className="flex-grow-1 mt-4">{children}</Container>
+
+        <Footer />
+      </div>
     </>
   );
 }
