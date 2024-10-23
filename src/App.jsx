@@ -10,6 +10,7 @@ function App() {
   return (
     <RootLayout>
       <Routes>
+        <Route path="/" element={<h1>Home</h1>} />
         <Route path="/lab1" element={<Lab1Page />} />
         <Route path="/lab2" element={<h1>Laboratorium2</h1>} />
         <Route path="/people/:id" element={<PeoplePage />} />
