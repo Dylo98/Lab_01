@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import PropTypes from 'prop-types';
 
 function RootLayout({ children }) {
   return (
@@ -21,4 +22,9 @@ function RootLayout({ children }) {
     </>
   );
 }
+
+RootLayout.propTypes = {
+  children: PropTypes.node,
+};
+
 export default RootLayout;
