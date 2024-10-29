@@ -1,19 +1,21 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { data } from '../data/module-data';
+import { useEffect } from 'react';
 
 function PeoplePage() {
   const { id } = useParams();
-  console.log(id);
-  const person = data.at(id);
+  const navigate = useNavigate();
+
+  const person = data.find(p => p.id === parseInt(id, 10));
+
+  useEffect(() => {
+    if (!person) {
+      navigate('/404', { replace: true });
+    }
+  }, [person, navigate]);
 
   if (!person) {
-    return (
-      <div className="container mt-5">
-        <div className="alert alert-danger text-center" role="alert">
-          Nie znaleziono osoby o podanym ID
-        </div>
-      </div>
-    );
+    return null;
   }
 
   return (
@@ -42,4 +44,5 @@ function PeoplePage() {
     </>
   );
 }
+
 export default PeoplePage;
