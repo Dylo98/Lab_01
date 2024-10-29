@@ -6,12 +6,13 @@ import Lab1Page from './pages/Lab1Page';
 import Lab2Page from './pages/Lab2Page';
 import PeoplePage from './pages/PeoplePage';
 import NotFoundPage from './pages/NotFoundPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <RootLayout>
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/lab1" element={<Lab1Page />} />
         <Route path="/lab2" element={<Lab2Page />} />
         <Route path="/people/:id" element={<PeoplePage />} />
