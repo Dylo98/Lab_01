@@ -4,7 +4,7 @@ function Lab1Page() {
   const navigate = useNavigate();
 
   const goToPersonDetails = person => {
-    navigate(`/people/${person.id}`);
+    navigate(`/lab2?id=${person.id}`);
   };
 
   return (
