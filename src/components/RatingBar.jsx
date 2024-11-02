@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../RatingBar.css';
 
 function RatingBar({ rate }) {
   const maxStars = 10;

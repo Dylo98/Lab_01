@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 
 function FlexContainer({ element: Element, data }) {
@@ -13,5 +14,10 @@ function FlexContainer({ element: Element, data }) {
     </Container>
   );
 }
+
+FlexContainer.propTypes = {
+  element: PropTypes.elementType.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default FlexContainer;

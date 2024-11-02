@@ -1,0 +1,11 @@
+.rating-bar {
+  font-size: 24px; /* Rozmiar gwiazdek */
+}
+
+.filled-star {
+  color: gold; /* Kolor wypełnionej gwiazdki */
+}
+
+.empty-star {
+  color: lightgray; /* Kolor pustej gwiazdki */
+}

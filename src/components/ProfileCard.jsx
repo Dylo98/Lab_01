@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import RatingBar from './RatingBar';
 
 function ProfileCard({ name, birth, eyes, initialRating, onEdit, onDelete }) {
-  const [rating, setRating] = useState(initialRating);
+  const [rating, setRating] = useState(() => {
+    const initial = Number(initialRating);
+    return isNaN(initial) ? 0 : Math.max(0, Math.min(10, initial));
+  });
 
   const handleRateClick = () => {
-    setRating(prevRating => (prevRating === 10 ? 0 : prevRating + 1));
+    setRating(prevRating => {
+      if (prevRating === 10) {
+        return 0;
+      }
+      return Math.min(prevRating + 1, 10);
+    });
   };
 
   return (
