@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+.rating-bar {
+  font-size: 24px;
+  color: #ccc; /* kolor dla pustych gwiazdek */
+}
+
+.filled-star {
+  color: #ffd700; /* kolor dla wypełnionych gwiazdek */
+}
+
+.empty-star {
+  color: #ccc;
+}

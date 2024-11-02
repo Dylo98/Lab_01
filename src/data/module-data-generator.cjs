@@ -40,6 +40,7 @@ fs.readFile('./names.txt', 'utf8', (err, data) => {
       name: randomName,
       birth: randomDate(new Date(1960, 0, 1), new Date(2024, 12, 30)),
       eyes: randomEyeColor(),
+      rating: 0,
     };
     content += `  ${JSON.stringify(person)},\n`;
   }

@@ -27,6 +27,9 @@ const Lab2Page = () => {
                 <li className="list-group-item">
                   <strong>Data urodzenia:</strong> {person.birth}
                 </li>
+                <li className="list-group-item">
+                  <strong>Rating:</strong> {person.rating}
+                </li>
               </ul>
             </div>
           </div>
