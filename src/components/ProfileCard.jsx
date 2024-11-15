@@ -8,6 +8,7 @@ function ProfileCard({ id, name, birth, eyes, rating, dispatch }) {
     dispatch({
       type: 'rate',
       id,
+      rating: rating === 10 ? 0 : rating + 1,
     });
   };
 
