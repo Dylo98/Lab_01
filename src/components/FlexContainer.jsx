@@ -1,13 +1,17 @@
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useReducer } from 'react';
+import AppReducer from '../data/AppReducer';
 
 function FlexContainer({ element: Element, data }) {
+  const [items, dispatch] = useReducer(AppReducer, data);
+
   return (
     <Container>
       <Row>
-        {data.map((item, index) => (
+        {items.map((item, index) => (
           <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-4">
-            <Element {...item} />
+            <Element {...item} dispatch={dispatch} />
           </Col>
         ))}
       </Row>

@@ -1,22 +1,32 @@
-import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import RatingBar from './RatingBar';
 
-function ProfileCard({ name, birth, eyes, initialRating, onEdit, onDelete }) {
-  const [rating, setRating] = useState(() => {
-    const initial = Number(initialRating);
-    return isNaN(initial) ? 0 : Math.max(0, Math.min(10, initial));
-  });
-
+function ProfileCard({ id, name, birth, eyes, rating, dispatch }) {
   const handleRateClick = () => {
-    setRating(prevRating => {
-      if (prevRating === 10) {
-        return 0;
-      }
-      return Math.min(prevRating + 1, 10);
+    dispatch({
+      type: 'rate',
+      id,
     });
+  };
+
+  const handleDeleteClick = () => {
+    dispatch({
+      type: 'delete',
+      id,
+    });
+  };
+
+  const handleEditClick = () => {
+    const newName = prompt('Enter new name:', name);
+    if (newName !== null) {
+      dispatch({
+        type: 'edit',
+        id,
+        payload: { name: newName },
+      });
+    }
   };
 
   return (
@@ -37,10 +47,10 @@ function ProfileCard({ name, birth, eyes, initialRating, onEdit, onDelete }) {
         <RatingBar rate={rating} />
 
         <div className="mt-auto">
-          <Button onClick={onEdit} variant="primary" className="m-1">
+          <Button onClick={handleEditClick} variant="primary" className="m-1">
             Edit
           </Button>
-          <Button onClick={onDelete} variant="danger" className="m-1">
+          <Button onClick={handleDeleteClick} variant="danger" className="m-1">
             Delete
           </Button>
           <Button onClick={handleRateClick} variant="secondary" className="m-1">
@@ -53,12 +63,12 @@ function ProfileCard({ name, birth, eyes, initialRating, onEdit, onDelete }) {
 }
 
 ProfileCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   birth: PropTypes.string.isRequired,
   eyes: PropTypes.string.isRequired,
-  initialRating: PropTypes.number.isRequired,
-  onEdit: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  rating: PropTypes.number.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default ProfileCard;
