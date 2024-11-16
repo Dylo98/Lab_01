@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import '../RatingBar.css';
+// import { useContext } from 'react';
+// import AppContext from '../data/AppContext';
 
 function RatingBar({ rate }) {
   const maxStars = 10;
+  // const context = useContext(AppContext);
+  // const dispatch = context.dispatch;
 
   return (
     <div className="rating-bar">

@@ -5,7 +5,7 @@ import { data } from '../data/module-data';
 function Lab3Page() {
   return (
     <div>
-      <h1>Lab 3 Page</h1>
+      <h1>Laboratoirum 3</h1>
       <FlexContainer element={ProfileCard} data={data} />
     </div>
   );
