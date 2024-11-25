@@ -10,6 +10,7 @@ function RootLayout({ children }) {
     { id: 3, label: 'Laboratorium 2', link: '/lab2' },
     { id: 4, label: 'Laboratorium 3', link: '/lab3' },
     { id: 5, label: 'Laboratorium 4', link: '/lab4' },
+    { id: 6, label: 'Dodaj obiekt', link: '/lab4/add' },
   ];
 
   return (
